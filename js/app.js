@@ -11,9 +11,14 @@ const getPhoneData = () => {
     inputText.value = '';
 
 };
+document.getElementById('singleDetail').style.display = 'none';
+
 // showing search reasult
 const searchReasulets = phones => {
-    console.log(phones);
+
+    if (phones.length == "") {
+
+    }
     const container = document.getElementById('search-reasult');
     container.textContent = '';
 
@@ -41,9 +46,8 @@ const searchReasulets = phones => {
 };
 
 // single phone detals
-const detals = document.getElementById('singleDetail').style.display = 'none';
 const singlePhonDetails = (singlePhone) => {
-    console.log(singlePhone);
+    // console.log(singlePhone);
     slugUrl = `https://openapi.programming-hero.com/api/phone/${singlePhone}`;
     fetch(slugUrl)
         .then(res => res.json())
@@ -51,9 +55,11 @@ const singlePhonDetails = (singlePhone) => {
 };
 // loding new details
 const singleLoding = (slug) => {
-    const detals = document.getElementById('singleDetail').style.display = 'block';
+
+    console.log(slug)
 
     const singleDetail = document.getElementById('singleDetail');
+    singleDetail.style.display = 'block';
     singleDetail.textContent = '';
     singleDetail.innerHTML = `
     <div class="row" id="details-parent">
@@ -64,7 +70,7 @@ const singleLoding = (slug) => {
         </div>
        <div class="col-lg-3 bg-light">
             <h1>Main Fetaures</h1>
-           <p>Realsed:${slug.releaseDate}</p>
+           <p>Realsed:${slug.releaseDate ? slug.releaseDate : 'Relese Date not Found'}</p>
            <p>Storage:${slug.mainFeatures.storage}</p>
            <p>Display:${slug.mainFeatures.displaySize}</p>
            <p>Cipset:${slug.mainFeatures.chipSet}</p>
@@ -83,6 +89,13 @@ const singleLoding = (slug) => {
        </div>
         <div class="col-lg-3 bg-light" id="others-parent">
           <h3>Others</h3>
+         
+            <p> Bluetooth: ${slug.others.Bluetooth}</p>
+            <p>  GPS:  ${slug.others.GPS}</p>
+            <p> NFC:  ${slug.others.NFC}</p>
+            <p> Radio:  ${slug.others.Radio}</p>
+            <p> USB:  ${slug.others.USB}</p>
+            <p>  WLAN:  ${slug.others.WLAN}</p>
         </div>
     </div>
      `;
@@ -92,22 +105,6 @@ const singleLoding = (slug) => {
 
 //  sumons code
 /*
-const allPhone = () => {
-    // get input value 
-    const inputField = document.getElementById('search-box');
-    const inputText = inputField.value;
-
-    // clear previous search key 
-    inputField.value = '';
-
-    // create dynamic url 
-    const url = https://openapi.programming-hero.com/api/phones?search=${inputText}
-
-    fetch(url)
-        .then(res => res.json())
-        .then(data => displayData(data.data))
-
-}
 
 // slice function 
 const sliceShow = (arrayType) => {
