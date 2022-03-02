@@ -9,20 +9,22 @@ const getPhoneData = () => {
 
 
     inputText.value = '';
+    singleDetail.textContent = '';
 
 };
 document.getElementById('singleDetail').style.display = 'none';
 
 // showing search reasult
 const searchReasulets = phones => {
+    document.getElementById('errorMassege').style.display = 'none';
 
     if (phones.length == "") {
-
+        document.getElementById('errorMassege').style.display = 'block';
     }
     const container = document.getElementById('search-reasult');
     container.textContent = '';
 
-    phones.forEach(phone => {
+    phones?.forEach(phone => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `

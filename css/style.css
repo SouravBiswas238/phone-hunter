@@ -13,6 +13,9 @@
 .searchWidth{
     width: 50%;
 }
+#errorMassege{
+    display: none;
+}
 @media only screen and (max-width: 500px) {
     .searchWidth{
         width: 100%;
