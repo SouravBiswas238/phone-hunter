@@ -1,0 +1,13 @@
+
+
+.my-card-image{
+    height: 15rem;
+    width: 69%;
+    margin: auto;
+}
+#sensor-parent{
+    font-size: 2rem;
+}
+#sensor-parent p{
+    font-size: 1rem;
+}
