@@ -79,13 +79,15 @@ const singleLoding = (slug) => {
 
        <div class="col-lg-3 bg-light" id="sensor-parent">
           <h3>Sensor<h3>
-                <p>${slug.mainFeatures.sensors[0]}</p>
-                <p>${slug.mainFeatures.sensors[1]}</p>
-                <p>${slug.mainFeatures.sensors[2]}</p>
-                <p>${slug.mainFeatures.sensors[3]}</p>
-                <p>${slug.mainFeatures.sensors[4]}</p>
-                <p>${slug.mainFeatures.sensors[5]}</p>
-               <p>${slug.mainFeatures.sensors[6]}</p>
+
+               <p>${slug.mainFeatures.sensors[0] ? slug.mainFeatures.sensors[0] : ''}</p>
+               <p>${slug.mainFeatures.sensors[1] ? slug.mainFeatures.sensors[1] : ''}</p>
+               <p>${slug.mainFeatures.sensors[2] ? slug.mainFeatures.sensors[2] : ''}</p>
+               <p>${slug.mainFeatures.sensors[3] ? slug.mainFeatures.sensors[3] : ''}</p>
+               <p>${slug.mainFeatures.sensors[4] ? slug.mainFeatures.sensors[4] : ''}</p>
+               <p>${slug.mainFeatures.sensors[5] ? slug.mainFeatures.sensors[5] : ''}</p>
+               <p>${slug.mainFeatures.sensors[6] ? slug.mainFeatures.sensors[6] : ''}</p>
+             
        </div>
         <div class="col-lg-3 bg-light" id="others-parent">
           <h3>Others</h3>

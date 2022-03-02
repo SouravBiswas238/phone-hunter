@@ -1,7 +1,6 @@
 
 
 .my-card-image{
-    height: 15rem;
     width: 69%;
     margin: auto;
 }
@@ -11,3 +10,11 @@
 #sensor-parent p{
     font-size: 1rem;
 }
+.searchWidth{
+    width: 50%;
+}
+@media only screen and (max-width: 500px) {
+    .searchWidth{
+        width: 100%;
+    }
+  }
